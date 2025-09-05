@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
+import NoiseBackground from "@/components/ui/NoiseBackground";
+
+const konexy = localFont({
+  src: "../../public/font/KonexyPersonalUse.otf",
+  variable: "--font-konexy",
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,8 +32,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${konexy.variable} antialiased mx-8 my-4`}
       >
+        <NoiseBackground />
         {children}
       </body>
     </html>
