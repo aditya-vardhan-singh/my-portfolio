@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "@/components/ui/Link";
-import Button from "@/components/ui/Button";
-import SlideShow from "@/components/ui/Slideshow";
+import {Button, SlideShow, BreakLine} from "@/components/ui";
 
 export default function Home() {
   return (
@@ -41,12 +40,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Break Line */}
-      <div className="flex flex-row items-center gap-2">
-        <Image priority src="/icons/plus.svg" alt="+" width={20} height={20} />
-        <hr className="w-full" />
-        <Image priority src="/icons/plus.svg" alt="+" width={20} height={20} />
-      </div>
+      <BreakLine />
 
       {/* Title */}
       <div>
@@ -55,12 +49,7 @@ export default function Home() {
         </p>
       </div>
 
-      {/* Break Line */}
-      <div className="flex flex-row items-center gap-2">
-        <Image priority src="/icons/plus.svg" alt="+" width={20} height={20} />
-        <hr className="w-full" />
-        <Image priority src="/icons/plus.svg" alt="+" width={20} height={20} />
-      </div>
+      <BreakLine />
 
       {/* Body (takes remaining height) */}
       <div className="flex-1 grid grid-cols-7 gap-3 divide-x divide-white overflow-hidden">
@@ -104,12 +93,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Break Line */}
-      <div className="flex flex-row items-center gap-2">
-        <Image priority src="/icons/plus.svg" alt="+" width={20} height={20} />
-        <hr className="w-full" />
-        <Image priority src="/icons/plus.svg" alt="+" width={20} height={20} />
-      </div>
+      <BreakLine />
 
       {/* Footer */}
       <footer className="grid grid-cols-12 uppercase text-sm font-mono">
@@ -160,12 +144,10 @@ export default function Home() {
           </div>
           <div className="col-span-4 flex flex-col gap-2">
             <Link link="tel:+91 9151584444" label="P: +91 91515 84444" />
-            {/* <p>P: +91 91515 84444</p> */}
             <Link
               link="mailto:aditya.vardhan.singh@outlook.com"
               label="E: aditya.vardhan.singh@outlook.com"
             />
-            {/* <p>E: aditya.vardhan.singh@outlook.com</p> */}
           </div>
         </div>
 

@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 
-export default function NoiseBackground() {
+export default function TVNoiseBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
