@@ -28,6 +28,7 @@ export default function Link({link, label}: LinkProps) {
         hover:after:w-full
         uppercase
       "
+      target="_blank"
       >
         {label}
       </a>

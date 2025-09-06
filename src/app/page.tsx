@@ -8,7 +8,33 @@ export default function Home() {
     <div className="h-[95vh] flex flex-col overflow-hidden gap-1.5">
       {/* Heading */}
       <div className="flex flex-row justify-between items-center">
-        <div>Icons</div>
+        <div className="flex flex-row gap-2">
+          <a href="#">
+            <Image
+              src="/icons/jedi-logo-symbol.png"
+              alt="at-at-walker"
+              width={25}
+              height={25}
+            />
+          </a>
+          <a href="#">
+            <Image
+              src="/icons/millennium-falcon.png"
+              alt="at-at-walker"
+              width={25}
+              height={25}
+            />
+          </a>
+          <a href="#">
+            <Image
+              src="/icons/space-station.png"
+              alt="at-at-walker"
+              width={25}
+              height={25}
+            />
+          </a>
+        </div>
+
         <div className="flex flex-row justify-between items-center w-[55%] gap-20">
           <SlideShow />
           <Button label="Contact" />
@@ -42,7 +68,10 @@ export default function Home() {
         <div className="col-span-2 flex flex-col overflow-hidden">
           <p className="uppercase font-mono font-semibold text-lg">About</p>
           <div className="flex-1 overflow-y-scroll pr-2 flex flex-col gap-4 mt-4 text-md">
-            <p>A computer scientist and a software developer. Worked on various full stack website </p>
+            <p>
+              A computer scientist and a software developer. Worked on various
+              full stack website{" "}
+            </p>
             <p>
               <span className="text-md uppercase font-mono tracking-tighter">
                 Early Life
@@ -86,8 +115,12 @@ export default function Home() {
       <footer className="grid grid-cols-12 uppercase text-sm font-mono">
         <div className="col-span-3 text-green-400">
           <p>
-            <a href="#" className="flex flex-row">
-              Download Resume{" "}
+            <a
+              href="/pdfs/Aditya Vardhan Singh.pdf"
+              className="flex flex-row"
+              download={true}
+            >
+              Resume Deck{" "}
               <Image
                 priority
                 src="/icons/download.svg"
@@ -102,25 +135,42 @@ export default function Home() {
         <div className="col-span-7 grid grid-cols-10 text-xs">
           <div className="col-span-2 flex flex-col gap-2">
             {/* <p><a href="#">Discord</a></p> */}
-            <Link link="#" label="Discord" />
-            <Link link="#" label="Github" />
+            <Link
+              link="https://discordapp.com/users/752882644303216700"
+              label="Discord"
+            />
+            <Link
+              link="https://github.com/aditya-vardhan-singh"
+              label="Github"
+            />
           </div>
           <div className="col-span-2 flex flex-col gap-2">
-            <Link link="#" label="Twitter" />
-            <Link link="#" label="Reddit" />
+            <Link link="https://x.com/AVS999" label="Twitter" />
+            <Link link="https://www.reddit.com/user/84444v/" label="Reddit" />
           </div>
           <div className="col-span-2 flex flex-col gap-2">
-            <Link link="#" label="StackOverflow" />
-            <Link link="#" label="LinkedIn" />
+            <Link
+              link="https://stackoverflow.com/users/25743252/aditya-vardhan-singh"
+              label="StackOverflow"
+            />
+            <Link
+              link="https://linkedin.com/in/aditya-vardhan-singh"
+              label="LinkedIn"
+            />
           </div>
           <div className="col-span-4 flex flex-col gap-2">
-            <p>P: +91 91515 84444</p>
-            <p>E: aditya.vardhan.singh@outlook.com</p>
+            <Link link="tel:+91 9151584444" label="P: +91 91515 84444" />
+            {/* <p>P: +91 91515 84444</p> */}
+            <Link
+              link="mailto:aditya.vardhan.singh@outlook.com"
+              label="E: aditya.vardhan.singh@outlook.com"
+            />
+            {/* <p>E: aditya.vardhan.singh@outlook.com</p> */}
           </div>
         </div>
 
         <div className="col-span-2">
-          <p className="text-right">@2025</p>
+          <p className="text-right">&copy;2025</p>
         </div>
       </footer>
     </div>

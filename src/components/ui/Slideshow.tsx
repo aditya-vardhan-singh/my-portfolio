@@ -25,7 +25,7 @@ export default function SlideShow() {
         {items.concat(items).map((text, index) => (
           <span
             key={index}
-            className="mx-2 text-xl font-semibold blur-[2px] hover:blur-none transition-all duration-300 cursor-default"
+            className="mx-2 text-lg font-semibold blur-[2px] hover:blur-none transition-all duration-300 cursor-default"
           >
             {text}
           </span>

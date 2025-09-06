@@ -5,7 +5,7 @@ import "./globals.css";
 import NoiseBackground from "@/components/ui/NoiseBackground";
 
 const konexy = localFont({
-  src: "../../public/font/KonexyPersonalUse.otf",
+  src: "../../public/fonts/KonexyPersonalUse.otf",
   variable: "--font-konexy",
 });
 
