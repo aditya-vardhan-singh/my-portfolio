@@ -50,7 +50,7 @@ export default function ProjectDetailCard({
         <div>
           {project.videos?.map((vdo, idx) => (
             <video
-              key={idx}
+              key={vdo} // ✅ Force remount when video src changes
               autoPlay
               muted
               loop
@@ -67,7 +67,7 @@ export default function ProjectDetailCard({
                 alt="Image"
                 width={2000}
                 height={2000}
-                key={idx}
+                key={img} // ✅ Use img URL as key for consistency
                 placeholder="blur"
                 blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAEElEQVQIW2NkYGBgYAAAAAMAAVxnm0YAAAAASUVORK5CYII="
                 className="rounded-lg shadow-lg w-full h-auto mb-4"
