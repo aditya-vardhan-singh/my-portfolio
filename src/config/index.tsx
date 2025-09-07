@@ -1,3 +1,3 @@
 import { projects } from "./projects";
 
-export { projects };
+export { projects, project_images };

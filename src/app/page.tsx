@@ -14,6 +14,7 @@ import {
 } from "@/components/ui";
 import { About, ProjectDetail, Projects } from "@/components/sections";
 import { projects } from "@/config";
+import Limk from "next/link";
 
 export default function Home() {
   const [currentSelected, setCurrentSelected] = useState<number>(0);
@@ -24,30 +25,30 @@ export default function Home() {
       {/* Heading */}
       <div className="flex flex-row justify-between items-center">
         <div className="flex flex-row gap-2">
-          <a href="#">
+          <Limk href="/stats">
             <Image
               src="/icons/jedi-logo-symbol.png"
               alt="at-at-walker"
               width={25}
               height={25}
             />
-          </a>
-          <a href="#">
+          </Limk>
+          <Limk href="/blogs">
             <Image
               src="/icons/millennium-falcon.png"
               alt="at-at-walker"
               width={25}
               height={25}
             />
-          </a>
-          <a href="#">
+          </Limk>
+          <Limk href="/gallery">
             <Image
               src="/icons/space-station.png"
               alt="at-at-walker"
               width={25}
               height={25}
             />
-          </a>
+          </Limk>
         </div>
 
         <div className="flex flex-row justify-between items-center w-[55%] gap-20">

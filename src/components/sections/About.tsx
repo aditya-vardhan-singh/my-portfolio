@@ -39,12 +39,12 @@ export default function About() {
           Physical Education and X Standard in Mathematics, Science, Computer,
           Social Sciences, English from City Montessori School, Lucknow.
         </p>
-        <p>State Level ABACUS competition merit holder.</p>
+        <p>ABACUS Level 5</p>
 
         <p className="font-bold font-mono uppercase text-lg text-gray-400">
           Destinations Explored
         </p>
-        <p>
+        <div>
           <b>India:</b>
           <p className="pl-4">
             <b>Delhi</b>
@@ -56,12 +56,12 @@ export default function About() {
             <b>Uttar Pradesh:</b> Ayodhya, Bareilly(4yrs), Deoria, Noida, Greater Noida, Rai Bareilly,
             Lucknow(Home), Gorakhpur(Hometown), Prayagraj
           </p>
-        </p>
+        </div>
 
         <p className="font-bold font-mono uppercase text-lg text-gray-400">
           Sports
         </p>
-        <p>TT, Badminton, Squash</p>
+        <p>Badminton, Table Tennis</p>
       </div>
     </div>
   );

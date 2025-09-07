@@ -5,6 +5,14 @@ const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "avs-my-portfolio.s3.ap-south-1.amazonaws.com"
+      }
+    ]
+  }
 };
 
 export default nextConfig;
