@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import NoiseBackground from "@/components/ui/NoiseBackground";
+import { CustomCursor } from "@/components/ui";
 
 const konexy = localFont({
   src: "../../public/fonts/KonexyPersonalUse.otf",
@@ -34,6 +35,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${konexy.variable} antialiased mx-8 my-4`}
       >
+        <CustomCursor />
         <NoiseBackground />
         {children}
       </body>
