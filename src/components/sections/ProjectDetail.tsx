@@ -1,3 +1,4 @@
+
 import { Button2, ProjectDetailCard } from "../ui";
 
 type ProjectDetailProps = {
@@ -11,6 +12,7 @@ export default function ProjectDetail({
   setInfo,
   currentSelected,
 }: ProjectDetailProps) {
+
   return (
     <div className="col-span-4 flex flex-col overflow-hidden">
       <div className="uppercase font-mono font-semibold text-lg flex flex-row justify-between">

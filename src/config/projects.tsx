@@ -38,7 +38,7 @@ export const projects: projectsType[] = [
     details: {
       description: [
         "The official website for college tech fest.",
-        "url: https://www.prism2025.tech/",
+        "URL: https://www.prism2025.tech/",
       ],
       services: "User registration, event participation",
       stack: "TypeScript, PostgreSQL, PRISMA, React",

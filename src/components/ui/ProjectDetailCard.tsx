@@ -1,7 +1,7 @@
 "use client";
 
 import { projects } from "@/config";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { projectsType } from "@/config/projects";
 import Image from "next/image";
 
@@ -15,13 +15,21 @@ export default function ProjectDetailCard({
   info,
 }: ProjectDetailCardProps) {
   const [project, setProject] = useState<projectsType>(projects[index]);
+    const scrollRef = useRef<HTMLDivElement>(null);
+  
+    useEffect(() => {
+      if (scrollRef.current) {
+        scrollRef.current.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    }, [index]);
+  
 
   useEffect(() => {
     setProject(projects[index]);
   }, [index]);
 
   return (
-    <div className="h-full overflow-hidden overflow-y-auto mt-4">
+    <div ref={scrollRef} className="h-full overflow-hidden overflow-y-auto mt-4">
       {info ? (
         <div className="flex flex-col gap-4 pr-44">
           {project.details.description.map((desc, idx) => {
