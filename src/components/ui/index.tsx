@@ -9,11 +9,15 @@ import CustomCursor from "./CustomCursor";
 import ProjectCard from "./ProjectCard";
 import ProjectDetailCard from "./ProjectDetailCard";
 import Footer from "./Footer";
+import Modal from "./Modal";
+import Drawer from "./Drawer";
 
 export {
   BreakLine,
   Button,
   Link,
+  Drawer,
+  Modal,
   Button2,
   NoiseBackground,
   SlideShow,

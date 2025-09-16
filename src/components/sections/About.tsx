@@ -10,7 +10,7 @@ export default function About() {
           Doing Bachelors in Technology (Computer Science Engineering) from
           University of Lucknow.
         </p>
-        <code>Citizenship: India</code>
+        {/* <code>Citizenship: India</code> */}
 
         <p className="font-bold font-mono uppercase text-lg text-gray-400">
           Skills
@@ -28,18 +28,23 @@ export default function About() {
           <br />
           PRISMA, SQLAlchemy
           <br />
-          Figma
+          Figma, Docker, Git
         </p>
 
         <p className="font-bold font-mono uppercase text-lg text-gray-400">
           Early Life
         </p>
         <p>
-          Did his XII Standard in Mathematics, Science, Computer, English,
-          Physical Education and X Standard in Mathematics, Science, Computer,
-          Social Sciences, English from City Montessori School, Lucknow.
+          Did his XII Standard in Mathematics, Science, English, Computer,
+          Physical Education and X Standard in Mathematics, Science, English,
+          Computer, Social Sciences from City Montessori School, Lucknow.
         </p>
         <p>ABACUS Level 5</p>
+
+        <p className="font-bold font-mono uppercase text-lg text-gray-400">
+          Sports
+        </p>
+        <p>Badminton, Table Tennis</p>
 
         <p className="font-bold font-mono uppercase text-lg text-gray-400">
           Destinations Explored
@@ -53,15 +58,14 @@ export default function About() {
             <br />
             <b>Maharashtra:</b> Mumbai, Nashik, Aurangabad
             <br />
-            <b>Uttar Pradesh:</b> Ayodhya, Bareilly(4yrs), Deoria, Noida, Greater Noida, Rai Bareilly,
-            Lucknow(Home), Gorakhpur(Hometown), Prayagraj
+            <b>Rajasthan:</b> Jaipur, Salasar, Khatu
+            <br />
+            <b>Uttar Pradesh:</b> Ayodhya, Bareilly(4yrs), Deoria, Noida,
+            Greater Noida, Rai Bareilly, Lucknow(Home), Gorakhpur(Hometown),
+            Prayagraj
+            <br />
           </p>
         </div>
-
-        <p className="font-bold font-mono uppercase text-lg text-gray-400">
-          Sports
-        </p>
-        <p>Badminton, Table Tennis</p>
       </div>
     </div>
   );

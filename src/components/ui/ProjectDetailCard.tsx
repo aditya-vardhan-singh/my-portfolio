@@ -8,28 +8,34 @@ import Image from "next/image";
 type ProjectDetailCardProps = {
   index: number;
   info: boolean;
+  isOpen: boolean;
+  setIsOpen: (value: boolean) => void;
 };
 
 export default function ProjectDetailCard({
   index,
   info,
+  isOpen,
+  setIsOpen,
 }: ProjectDetailCardProps) {
   const [project, setProject] = useState<projectsType>(projects[index]);
-    const scrollRef = useRef<HTMLDivElement>(null);
-  
-    useEffect(() => {
-      if (scrollRef.current) {
-        scrollRef.current.scrollTo({ top: 0, behavior: "smooth" });
-      }
-    }, [index]);
-  
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }, [index]);
 
   useEffect(() => {
     setProject(projects[index]);
   }, [index]);
 
   return (
-    <div ref={scrollRef} className="h-full overflow-hidden overflow-y-auto mt-4">
+    <div
+      ref={scrollRef}
+      className="h-full overflow-hidden overflow-y-auto mt-4"
+    >
       {info ? (
         <div className="flex flex-col gap-4 pr-44">
           {project.details.description.map((desc, idx) => {
@@ -55,10 +61,10 @@ export default function ProjectDetailCard({
           </div>
         </div>
       ) : (
-        <div>
+        <div onClick={() => setIsOpen(true)} className={`${isOpen ? "" : "cursor-pointer"}`}>
           {project.videos?.map((vdo, idx) => (
             <video
-              key={vdo} // ✅ Force remount when video src changes
+              key={vdo}
               autoPlay
               muted
               loop

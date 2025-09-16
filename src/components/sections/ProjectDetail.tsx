@@ -1,18 +1,18 @@
-
 import { Button2, ProjectDetailCard } from "../ui";
 
 type ProjectDetailProps = {
   info: boolean;
   setInfo: (value: boolean) => void;
   currentSelected: number;
+  setIsOpen: (value: boolean) => void;
 };
 
 export default function ProjectDetail({
   info,
   setInfo,
   currentSelected,
+  setIsOpen,
 }: ProjectDetailProps) {
-
   return (
     <div className="col-span-4 flex flex-col overflow-hidden">
       <div className="uppercase font-mono font-semibold text-lg flex flex-row justify-between">
@@ -22,7 +22,11 @@ export default function ProjectDetail({
           handleClick={() => setInfo(!info)}
         />
       </div>
-      <ProjectDetailCard index={currentSelected} info={info} />
+      <ProjectDetailCard
+        index={currentSelected}
+        info={info}
+        setIsOpen={setIsOpen}
+      />
     </div>
   );
 }
