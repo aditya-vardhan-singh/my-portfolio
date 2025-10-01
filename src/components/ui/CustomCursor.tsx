@@ -55,8 +55,8 @@ export default function CustomCursor() {
     };
   }, []);
 
-  const imgSrc = isHoveringCD ? "/favicon1.ico" : "/favicon.ico";
-  const imgSize = isHoveringCD ? 48 : 20;
+  const imgSrc = isHoveringCD ? "/favicon.ico" : "/icons/light-saber-illustration.ico";
+  const imgSize = isHoveringCD ? 80 : 40;
 
   // tint the CD to green when active (covers cases where you don't have a separate green file)
   const imgFilter = isHoveringCD
@@ -75,7 +75,8 @@ export default function CustomCursor() {
           top: `${position.y}px`,
           width: `${imgSize}px`,
           height: `${imgSize}px`,
-          transform: "translate(-50%, -50%)",
+          transform: "translate(0, 0)", // place top-left of image at cursor
+          transformOrigin: "0 0",
           pointerEvents: "none",
           zIndex: 9999,
           display: visible ? "block" : "none",

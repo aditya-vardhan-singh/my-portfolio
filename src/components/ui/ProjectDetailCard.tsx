@@ -40,6 +40,9 @@ export default function ProjectDetailCard({
     >
       {info ? (
         <div className="flex flex-col gap-4 pr-44">
+          {project.details.description.map((desc, idx) => {
+            return <p key={idx}>{desc}</p>;
+          })}
           <div className="flex flex-row gap-4 text-sm font-mono">
             {project.details.github && (
               <div>
@@ -52,9 +55,6 @@ export default function ProjectDetailCard({
               </div>
             )}
           </div>
-          {project.details.description.map((desc, idx) => {
-            return <p key={idx}>{desc}</p>;
-          })}
           <div className="flex flex-row justify-between">
             <div>
               <p className="font-mono uppercase font-bold text-gray-400 text-lg mb-4">
