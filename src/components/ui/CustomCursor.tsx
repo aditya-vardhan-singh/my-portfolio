@@ -6,6 +6,7 @@ export default function CustomCursor() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [visible, setVisible] = useState(true);
   const [isHoveringLink, setIsHoveringLink] = useState(false);
+  const [isHoveringCD, setIsHoveringCD] = useState(false);
 
   useEffect(() => {
     const moveCursor = (e: MouseEvent) => {
@@ -17,10 +18,18 @@ export default function CustomCursor() {
 
     const checkHoverLink = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
-      if (target.closest("a")) {
+      const link = target.closest("a") as HTMLAnchorElement | null;
+      if (link) {
         setIsHoveringLink(true);
+        const wantsCD =
+          link.dataset?.cursor === "cd" ||
+          link.classList.contains("cd-cursor") ||
+          link.dataset?.cursor === "cd-green" ||
+          link.classList.contains("cd-cursor--green");
+        setIsHoveringCD(!!wantsCD);
       } else {
         setIsHoveringLink(false);
+        setIsHoveringCD(false);
       }
     };
 
@@ -37,22 +46,63 @@ export default function CustomCursor() {
     };
   }, []);
 
+  // Toggle CSS class on root to reliably hide native cursor (overrides anchor pointer)
+  useEffect(() => {
+    const root = document.documentElement;
+    root.classList.add("custom-cursor--hidden");
+    return () => {
+      root.classList.remove("custom-cursor--hidden");
+    };
+  }, []);
+
+  const imgSrc = isHoveringCD ? "/favicon1.ico" : "/favicon.ico";
+  const imgSize = isHoveringCD ? 48 : 20;
+
+  // tint the CD to green when active (covers cases where you don't have a separate green file)
+  const imgFilter = isHoveringCD
+    ? "sepia(1) saturate(3) hue-rotate(80deg) contrast(0.95)"
+    : "none";
+
   return (
-    <div
-      className={`pointer-events-none fixed top-0 left-0 w-8 h-8 rounded-full bg-white opacity-30 transform -translate-x-1/2 -translate-y-1/2 transition-transform duration-75 ${
-        visible ? "block" : "hidden"
-      }`}
-      style={{
-        left: `${position.x}px`,
-        top: `${position.y}px`,
-      }}
-    >
+    <>
+      <img
+        src={imgSrc}
+        alt=""
+        aria-hidden="true"
+        style={{
+          position: "fixed",
+          left: `${position.x}px`,
+          top: `${position.y}px`,
+          width: `${imgSize}px`,
+          height: `${imgSize}px`,
+          transform: "translate(-50%, -50%)",
+          pointerEvents: "none",
+          zIndex: 9999,
+          display: visible ? "block" : "none",
+          filter: imgFilter,
+        }}
+        className="select-none"
+      />
+
       {/* Ripple when hovering over a link */}
-      {isHoveringLink && (
-        <div className="absolute inset-0 flex items-center justify-center">
-          <span className="block w-16 h-16 rounded-full border-2 border-green-400 opacity-50 animate-ripple" />
-        </div>
+      {isHoveringLink && visible && (
+        <span
+          aria-hidden="true"
+          style={{
+            position: "fixed",
+            left: `${position.x}px`,
+            top: `${position.y}px`,
+            width: "48px",
+            height: "48px",
+            transform: "translate(-50%, -50%)",
+            pointerEvents: "none",
+            zIndex: 9998,
+            borderRadius: "9999px",
+            border: "2px solid rgba(34,197,94,0.5)",
+            animation: "ripple 700ms ease-out",
+          }}
+        />
       )}
-    </div>
+    </>
   );
 }

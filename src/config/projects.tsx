@@ -5,6 +5,8 @@ export type projectsType = {
     description: string[];
     services: string;
     stack: string;
+    github?: string;
+    website?: string;
   };
   images?: string[];
   videos?: string[];
@@ -16,10 +18,13 @@ export const projects: projectsType[] = [
     type: "C Prog",
     details: {
       description: [
-        "A custom text editor like vi that can edit simple text on the terminal.",
+        "A custom text editor that can edit files in your console.",
+        "Inspired by Vim editor.",
+        "This was my first ever C project, built during my initial days of learning C.",
       ],
-      services: "Text Editing, Native, Customizable",
+      services: "Text Editing, Console Program",
       stack: "C, Makefile, GCC compiler",
+      github: "https://github.com/aditya-vardhan-singh/Text-Editor",
     },
     images: [
       "https://avs-my-portfolio.s3.ap-south-1.amazonaws.com/VEditor/284602263-b2f4d606-b905-4656-8adb-a162435b18d4.png",
@@ -36,10 +41,8 @@ export const projects: projectsType[] = [
     name: "PRISM",
     type: "Web2",
     details: {
-      description: [
-        "The official website for college tech fest.",
-        "URL: https://www.prism2025.tech/",
-      ],
+      description: ["The official website for college tech fest."],
+      website: "https://www.prism2025.tech",
       services: "User registration, event participation",
       stack: "TypeScript, PostgreSQL, PRISMA, React",
     },
@@ -55,7 +58,7 @@ export const projects: projectsType[] = [
     ],
   },
   {
-    name: "Maidaan",
+    name: "Movora",
     type: "Startup",
     details: {
       description: ["The official website for college tech fest."],

@@ -13,7 +13,7 @@ import {
   ProjectDetailCard,
   Drawer,
 } from "@/components/ui";
-import { About, ProjectDetail, Projects } from "@/components/sections";
+import { About, ProjectDetail, Projects } from "./components";
 
 export default function Home() {
   const [currentSelected, setCurrentSelected] = useState<number>(0);
@@ -22,7 +22,11 @@ export default function Home() {
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   return (
-    <div className={`h-[95vh] flex flex-col overflow-hidden gap-1.5 ${drawerOpen ? "opacity-100" : ""}`}>
+    <div
+      className={`h-[95vh] flex flex-col overflow-hidden gap-1.5 ${
+        drawerOpen ? "opacity-100" : ""
+      }`}
+    >
       {/* Heading */}
       <div className="flex flex-row justify-between items-center">
         <div className="flex flex-row gap-2">
@@ -108,17 +112,15 @@ export default function Home() {
 
       {/* Drawer */}
       <Drawer isOpen={drawerOpen} onClose={() => setDrawerOpen(false)}>
-        <h2 className="text-2xl font-bold mb-4">Contact Us</h2>
-        <div className="mb-8">
-        <p>A computer scientist and a software developer.</p>
-        <p>
-          Doing Bachelors in Technology (Computer Science Engineering) from
-          University of Lucknow.
-        </p>
-        <code>Citizenship: India</code>
-
+        <h2 className="text-2xl font-bold mb-2 uppercase font-mono">Contact</h2>
+        <BreakLine />
+        <div className="my-2">
+          <p>Having experience in full-stack development.</p>
+          <p>Currently looking for internships and full-time opportunities.</p>
         </div>
-        <form className="flex flex-col gap-4">
+        <BreakLine />
+        <form className="flex flex-col gap-4 mt-2">
+          <h2 className="text-lg uppercase font-mono text-gray-400 font-bold">Reach me</h2>
           <input
             type="text"
             placeholder="Your Name"
@@ -127,6 +129,11 @@ export default function Home() {
           <input
             type="email"
             placeholder="Your Email"
+            className="border p-2 rounded"
+          />
+          <input
+            type="text"
+            placeholder="Your Designation"
             className="border p-2 rounded"
           />
           <textarea

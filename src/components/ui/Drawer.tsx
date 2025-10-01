@@ -1,4 +1,5 @@
 import React from "react";
+import Button2 from "./Button2";
 import NoiseBackground from "./NoiseBackground";
 
 type DrawerProps = {
@@ -19,20 +20,24 @@ export default function Drawer({ isOpen, onClose, children }: DrawerProps) {
       />
       {/* Drawer */}
       <div
-        className={`fixed top-0 right-0 z-50 h-full w-[55vw] shadow-xl transition-transform duration-800 ${
+        className={`fixed top-0 right-0 z-50 h-full w-[55vw] backdrop-brightness-0 shadow-xl transition-transform duration-800 ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
         onClick={(e) => e.stopPropagation()}
       >
-        {/* <div className="opacity-100 -z-10 absolute inset-0">
+        <div className="opacity-100 -z-10 absolute inset-0">
           <NoiseBackground />
-        </div> */}
-        <button
-          className="absolute top-4 right-4 text-gray-600 hover:text-black"
+        </div>
+        <div className="absolute top-6 right-6">
+
+        <Button2 label="Close" handleClick={onClose} />
+        </div>
+        {/* <button
+          className="absolute top-4 right-4 text-gray-600 hover:text-white"
           onClick={onClose}
         >
           Close
-        </button>
+        </button> */}
         <div className="p-6">{children}</div>
       </div>
     </>

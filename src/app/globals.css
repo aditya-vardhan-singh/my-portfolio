@@ -24,6 +24,7 @@ body {
   background: transparent;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  cursor: none; /* hide native cursor so custom image is used */
 }
 
 /* Hide scrollbar for Chrome, Safari, Edge */
@@ -37,13 +38,20 @@ body {
   -ms-overflow-style: none; /* IE/Edge */
 }
 
+/* when this class is set on <html>, force-hide native cursors everywhere */
+.custom-cursor--hidden,
+.custom-cursor--hidden * {
+  cursor: none !important;
+}
+
+/* ripple animation used by the CustomCursor ripple span */
 @keyframes ripple {
-  0% {
-    transform: scale(1.5);
-    opacity: 0.5;
+  from {
+    transform: translate(-50%, -50%) scale(0.6);
+    opacity: 0.8;
   }
-  100% {
-    transform: scale(0);
+  to {
+    transform: translate(-50%, -50%) scale(1.4);
     opacity: 0;
   }
 }

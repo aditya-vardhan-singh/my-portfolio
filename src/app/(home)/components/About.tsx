@@ -5,13 +5,15 @@ export default function About() {
         About
       </p>
       <div className="flex-1 overflow-y-scroll pr-4 flex flex-col gap-4 mt-4 text-md">
-        <p>A computer scientist and a software developer.</p>
+        <p>A computer scientist and a software engineer.</p>
         <p>
           Doing Bachelors in Technology (Computer Science Engineering) from
           University of Lucknow.
         </p>
-        {/* <code>Citizenship: India</code> */}
-
+        <p>
+          Learning as I go, I have worn multiple hats at work and excel at work
+          in uncertain, challenging scenarios.
+        </p>
         <p className="font-bold font-mono uppercase text-lg text-gray-400">
           Skills
         </p>
@@ -35,9 +37,8 @@ export default function About() {
           Early Life
         </p>
         <p>
-          Did his XII Standard in Mathematics, Science, English, Computer,
-          Physical Education and X Standard in Mathematics, Science, English,
-          Computer, Social Sciences from City Montessori School, Lucknow.
+          Did his XII & X Standards in Maths and Science from City Montessori
+          School, Lucknow.
         </p>
         <p>ABACUS Level 5</p>
 

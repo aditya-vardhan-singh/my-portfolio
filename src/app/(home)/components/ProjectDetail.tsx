@@ -1,4 +1,4 @@
-import { Button2, ProjectDetailCard } from "../ui";
+import { Button2, ProjectDetailCard } from "@/components/ui";
 
 type ProjectDetailProps = {
   info: boolean;
@@ -23,6 +23,7 @@ export default function ProjectDetail({
         />
       </div>
       <ProjectDetailCard
+        isOpen={false}
         index={currentSelected}
         info={info}
         setIsOpen={setIsOpen}

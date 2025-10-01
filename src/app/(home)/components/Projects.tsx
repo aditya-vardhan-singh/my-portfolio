@@ -1,5 +1,5 @@
 import { projects } from "@/config";
-import { ProjectCard } from "../ui";
+import { ProjectCard } from "../../../components/ui";
 
 type ProjectsProps = {
   currentSelected: number;

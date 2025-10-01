@@ -31,7 +31,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="bg-black">
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${konexy.variable} antialiased mx-8 my-4`}
       >

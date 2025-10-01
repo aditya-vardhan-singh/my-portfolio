@@ -37,7 +37,6 @@ export default function ProjectCard({
         className={`flex flex-row justify-between w-full cursor-pointer items-center transition-all duration-300 ease-in-out`}
       >
         <div className="flex flex-row items-center transition-all duration-300 ease-in-out">
-          {/* Dot remains mounted during animation, margin depends on `selected` */}
           {showDot && (
             <div
               className={`w-4 h-4 bg-green-400 rounded-full blur-[5px] transition-all duration-300 ease-in-out ${

@@ -4,6 +4,8 @@ import { projects } from "@/config";
 import { useEffect, useState, useRef } from "react";
 import { projectsType } from "@/config/projects";
 import Image from "next/image";
+import Link from "./Link";
+import ExternalLink from "./ExternalLink";
 
 type ProjectDetailCardProps = {
   index: number;
@@ -38,6 +40,18 @@ export default function ProjectDetailCard({
     >
       {info ? (
         <div className="flex flex-col gap-4 pr-44">
+          <div className="flex flex-row gap-4 text-sm font-mono">
+            {project.details.github && (
+              <div>
+                <ExternalLink link={project.details.github} label="Github" />
+              </div>
+            )}
+            {project.details.website && (
+              <div>
+                <ExternalLink link={project.details.website} label="Website" />
+              </div>
+            )}
+          </div>
           {project.details.description.map((desc, idx) => {
             return <p key={idx}>{desc}</p>;
           })}
@@ -61,7 +75,10 @@ export default function ProjectDetailCard({
           </div>
         </div>
       ) : (
-        <div onClick={() => setIsOpen(true)} className={`${isOpen ? "" : "cursor-pointer"}`}>
+        <div
+          onClick={() => setIsOpen(true)}
+          className={`${isOpen ? "" : "cursor-pointer"}`}
+        >
           {project.videos?.map((vdo, idx) => (
             <video
               key={vdo}
